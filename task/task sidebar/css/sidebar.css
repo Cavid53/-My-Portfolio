@@ -1,0 +1,52 @@
+
+.sidebar{
+    background-color: black;
+    width: 300px;
+    position: absolute;
+    height: 100%;
+    transform: translate(-300px,0);
+    transition: all 1s;
+
+}
+
+.sidebar ul{
+    position: absolute;
+    left: 30px;
+    top: 25px;
+    
+  
+}
+    
+.sidebar ul li{
+   
+    padding-top: 50px;
+    font-size: 25px;
+    font-weight: 700;
+   
+    
+    
+}
+.sidebar ul li a{
+   
+ color: white;
+ text-decoration: none;
+}
+
+.sidebar span{
+    position: absolute;
+    right: 10px;
+    top: 3px;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+}
+#button{
+    position: absolute;
+    left: 500px;
+    top: 100px;
+    background: red;
+    color: white;
+    font-size: 25px;
+    border-radius: 10px;
+    box-shadow: black;
+}

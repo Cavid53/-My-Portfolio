@@ -1,0 +1,98 @@
+body {
+  height: 5000px; }
+
+header #head-page {
+  position: relative;
+  background-image: url("../img/1.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100vh; }
+  header #head-page .text {
+    text-align: center;
+    padding-top: 180px; }
+    header #head-page .text h1 {
+      color: white;
+      font-weight: 700;
+      word-spacing: 10px;
+      font-size: 60px; }
+    header #head-page .text .line {
+      margin-top: 30px;
+      height: 5px;
+      width: 70px;
+      background-color: red;
+      margin: auto; }
+    header #head-page .text p {
+      color: #f8e2e2;
+      padding-top: 30px; }
+    header #head-page .text .but {
+      margin-top: 10px;
+      color: white;
+      width: 180px;
+      height: 50px;
+      padding-top: 10px;
+      background-color: red;
+      border-radius: 25px;
+      font-weight: 600; }
+      header #head-page .text .but:hover {
+        background-color: greenyellow;
+        transition: all 1s; }
+  header #head-page .cover {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(78, 52, 52, 0.7); }
+  header #head-page .nav-head .right {
+    display: flex;
+    justify-content: space-between; }
+    header #head-page .nav-head .right a {
+      color: white;
+      font-size: 20px;
+      font-weight: 600; }
+      header #head-page .nav-head .right a:hover {
+        color: greenyellow;
+        transition: all 0.5s; }
+  header #head-page .nav-head .left a {
+    color: white;
+    font-size: 20px;
+    font-weight: 600; }
+    header #head-page .nav-head .left a:hover {
+      color: greenyellow;
+      transition: all 0.5s; }
+header #need-part {
+  background-color: red;
+  height: 500px; }
+  header #need-part .text {
+    text-align: center;
+    padding-top: 180px; }
+    header #need-part .text h1 {
+      color: white;
+      font-weight: 600;
+      word-spacing: 10px;
+      font-size: 50px; }
+    header #need-part .text .line {
+      margin-top: 30px;
+      height: 5px;
+      width: 70px;
+      background-color: white;
+      margin: auto; }
+    header #need-part .text p {
+      color: #f8e2e2;
+      padding-top: 30px; }
+    header #need-part .text .but {
+      margin-top: 10px;
+      color: black;
+      width: 180px;
+      height: 50px;
+      padding-top: 10px;
+      background-color: white;
+      border-radius: 25px;
+      font-weight: 600; }
+      header #need-part .text .but:hover {
+        background-color: greenyellow;
+        transition: all 1s; }
+
+/*# sourceMappingURL=style.css.map */

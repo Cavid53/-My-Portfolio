@@ -1,0 +1,564 @@
+
+
+#slider {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    position: relative;
+}
+#slider .logo{  
+    position: absolute;
+    top: 5px;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+
+#slider .slide {
+    position: absolute;
+    top: 0;
+    left: 0%;
+    width: 400%;
+    height: 100%;
+    display: flex;
+}
+
+#slider .slide .item {
+    width: 25%;
+    height: 100%;
+    position: relative;
+    box-sizing: border-box;
+}
+
+#slider .slide .item img {
+    width: 100%;
+    height: 100%;
+}
+
+#slider .slide .item .cover {
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.5;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#slider .slide .item .word {
+    position: absolute;
+    top: 40%;
+}
+
+#slider .slide .item .word h3 {
+    font-size: 3.3em;
+    letter-spacing: 1px;
+    color: white;
+    font-weight: 300;
+    text-transform: capitalize;
+    line-height: 68px;
+}
+
+#slider .slide .item .word h4 {
+    color: white;
+    margin: 1em 0 1.5em;
+    letter-spacing: 4px;
+    text-transform: capitalize;
+    font-weight: 200;
+}
+
+#slider .slide .item .word a {
+    border: 2px solid white;
+    border-radius: 0px;
+    padding: 11px 30px;
+    color: white;
+    font-size: 15px;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+    font-family: 'Raleway', sans-serif;
+    cursor: pointer;
+    text-decoration: none;
+    
+}
+
+#slider .slide .item .word a:last-child{
+    margin-left: 10px;
+}
+
+
+/* navigation button Start*/
+
+#slider .navigation {
+    position: absolute;
+    top: 45%;
+    color: white;
+    font-size: 30px;
+    opacity: 0.3;
+    cursor: pointer;
+}
+
+#slider .navigation:hover {
+    transition: all 0.5s;
+    opacity: 1;
+}
+
+#slider .right {
+    right: 30px;
+}
+
+#slider .left {
+    left: 30px;
+    display: none;
+}
+
+
+/* navigation button End*/
+
+
+/* navba Start */
+
+nav {
+    position: relative;
+    z-index: 1;
+    padding: 5px 0;
+    border-bottom: 1px groove white;
+}
+
+nav img {
+    width: 100%;
+}
+
+nav ul li {
+    display: inline-block;
+    color: white;
+}
+
+nav ul {
+   padding-top: 15px;
+}
+
+nav ul li a {
+    text-decoration: none !important;
+    color: white;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    padding-left: 0;
+    padding-right: 0;
+    padding: 10px 13px;
+    font-weight: 400;
+    font-size: 15px;
+    vertical-align: middle;
+}
+
+nav ul li a:hover {
+    color: inherit;
+}
+
+nav ul li .book {
+    background: #047ffc;
+    padding: 10px 25px;
+    display: block;
+    margin-top: -7px;
+    text-transform: uppercase;
+    color: #fff;
+    letter-spacing: 1px;
+    font-size: 14px;
+}
+
+
+/* navba End */
+
+#explore-main{
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+#explore-main h4{
+    line-height: 43px;
+    font-size: 26px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+
+}
+#explore-main p{
+    line-height: 30px;
+    margin-top: 30px;
+}
+#explore-main img{}
+
+.explore-down{
+    height: 100%;
+}
+.explore-down .item{
+   text-align: center;
+}
+.explore-down .item i{
+    font-size: 30px;
+    color: blue;
+}
+.explore-down .item p{
+    font-size: 45px;
+    position: relative;
+}
+.explore-down .item span{}
+.explore-down .item .under-text{
+    font-size: 20px;
+    color: black;
+    opacity: 0.6;
+    position: absolute;
+    top: 7px;
+
+}
+
+#trip-main{
+    background: #047ffc;
+    padding: 70px 0;
+    margin-bottom: 100px;
+}
+#trip-main .title{}
+#trip-main .title h1{
+    text-align: center;
+    color: white;
+    font-weight: 400;
+    font-size: 50px;
+    word-spacing: 5px;
+}
+#trip-main .item{
+    text-align: center;
+    font-size: 18px;
+    padding-top: 70px;
+
+}
+#trip-main .item .icon{
+    color: blue;
+    background-color: white;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin: 0 auto 25px;
+}
+
+
+#trip-main .item .icon i{
+    padding-top: 25px;
+    font-size: 30px;
+}
+#trip-main .item h4{
+    color: white;
+    word-spacing: 2px;
+}
+#trip-main .item p{
+    color: white;
+    padding-top: 25px;
+}
+
+#discover-main{
+    margin-bottom: 80px;
+}
+#discover-main .text{} 
+#discover-main .text h2{
+    text-align: center;
+    word-spacing: 5px;
+    font-size: 45px;
+    font-weight: 400;
+}
+#discover-main .text p{
+    text-align: center;
+    color: black;
+    opacity: 0.6;
+    word-spacing: 3px;
+
+}  
+
+#discover-main .discover-image{
+    padding-top: 35px;
+}
+#discover-main .discover-image .item{
+    position: relative;
+    
+}
+#discover-main .discover-image .item i{
+    color:#047ffc;
+}
+#discover-main .discover-image .item span{
+    color: black;
+    opacity: 0.6;
+    font-weight: 500;
+}
+
+#discover-main .discover-image .item #icon-tag{
+    position: absolute;
+    top: 126px;
+    right: 4px;
+    color: white;
+    background: #047ffc;
+    width: 70px;
+    height: 38px;
+    text-align: center;
+    padding-top: 12px;
+}
+
+#discover-main .discover-main-end{
+    background-color: #047ffc;
+    width: 200px;
+    height: 45px;
+    padding-top: 10px;
+    color: white;
+    margin-top: 30px;
+    margin-left: 465px;
+    text-align: center;
+    cursor: pointer;
+
+}
+
+#enjoy-main{
+    width: 100%;
+    height: 360px;
+    background-image: url("../img/enjoy-back.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    position: relative;
+   
+    
+    
+}
+
+#enjoy-main .cover{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: black;
+    opacity: 0.4;
+}
+
+
+#enjoy-main .text{
+    position: absolute;
+    top: 70px;
+    color:white;
+    font-size: 17px;
+}
+#enjoy-main .text h3{
+    font-weight: 400;
+    font-size: 50px;
+    word-spacing: 6px;
+}
+#enjoy-main .text p{
+   margin-top: 25px;
+}
+#enjoy-main .text .book-now{
+    width: 150px;
+    height: 50px;
+    border: 2px solid white;
+    text-align: center;
+    padding-top: 10px;
+    cursor: pointer;
+    margin-top: 25px;
+}
+#enjoy-main .text .book-now a{
+text-decoration: none;
+color: white;
+}
+
+
+#destination-main{
+padding-top: 40px;
+}
+#destination-main .text{
+    text-align: center;
+
+}
+#destination-main .text h3{
+    font-size: 50px;
+    font-weight: 400;
+}
+#destination-main .text p{
+    color: black;
+    opacity: 0.8;
+
+}
+#destination-main .image{
+    padding-top: 40px;
+}
+#destination-main .image .item{
+    position: relative;
+    overflow: hidden;
+   
+    
+}
+#destination-main .image .item .slide-image{
+    transition: all 0.5s;
+
+}
+#destination-main .image .item:hover .slide-image{
+     bottom: 0;
+     
+
+}
+#destination-main .image .item .icon{
+    background-color: #047ffc;
+    color: white;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    border: 1px solid #047ffc;
+    font-size: 12px;
+    width: 95px;
+    height: 28px;
+    text-align: center;
+    padding-top: 3px;
+}
+
+#destination-main .image .item .slide-image{
+    width: 100%;
+    height: 145px;
+    background-color: black;
+    opacity: 0.8;
+    color: white;
+    position: absolute;
+    bottom: -200px;
+    text-align: center;
+
+}
+
+
+.textOne h4{
+    position: absolute;
+    top: 40px;
+    left: 100px;
+   
+}
+.textTwo h4{
+    position: absolute;
+    top: 40px;
+    left: 85px;
+}
+.textThree h4{
+    position: absolute;
+    top: 40px;
+    left: 92px;
+   
+    
+}
+.textFour h4{
+    position: absolute;
+    top: 40px;
+    left: 66px;
+}
+
+#destination-main .image .item p{
+    position: absolute;
+    top: 80px;
+    left: 85px;
+    border: 1px solid white;
+    width: 100px;
+    height: 40px;
+    text-align: center;
+    padding-top: 5px;
+}
+
+#foot-page{
+    margin-top: 80px;
+   /* height: 100%; */
+    width: 100%;
+}
+#foot-page .text h5{
+    color: white;
+}
+#foot-page .text p{
+    line-height: 0.7cm;
+    color: #707070;
+}
+#foot-page .icon a{
+    text-decoration: none;
+}
+#foot-page .icon a .face{
+    background-color: #3b5998;
+    color: white;
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    padding-top: 10px;
+}
+#foot-page .icon a .twit{
+    background-color: #1da1f2;
+    color: white;
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    padding-top: 10px;
+}
+#foot-page .icon a .google{
+    background-color: #dd4b39;
+    color: white;
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    padding-top: 10px;
+}
+#foot-page .icon a .linked{
+    background-color: #0077b5;
+    color: white;
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    padding-top: 10px;
+}
+
+#foot-page .text ul{
+    list-style-type: none;
+    padding-left: 0px;
+}
+
+#foot-page .text ul li:last-child{
+    color: #707579;
+    cursor: pointer;
+}
+#foot-page .text ul li:last-child:hover{
+    color: white;
+opacity: 0.5;
+transition: 0.5;
+}
+#foot-page .text ul li a{
+    color: #707579;
+    text-decoration: none;
+    line-height: 0.8cm;
+}
+#foot-page .text ul li a:hover{
+color: white;
+opacity: 0.5;
+transition: 0.5;
+}
+.footer-one{
+    background: black;
+    padding-top: 50px;
+    padding-bottom: 0px;
+}
+.footer-two{
+    background: #222;
+    color:#707579;
+    height: 65px;
+    width: 100%;
+    text-align: center;
+    line-height: 50px;
+}
+
+.footer-two a{
+    text-decoration: none;
+    color: #707579;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

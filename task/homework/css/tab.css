@@ -1,0 +1,46 @@
+#tabs{
+    width: 800px;
+    margin: 0 auto;
+
+}
+#tabs ul{
+    margin: 30px 0;
+    
+}
+#tabs ul li{
+    display: inline-block;
+    width: 180px;
+    text-align: center;
+    background-color: green;
+    color: white;
+    padding: 20px;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 600;
+}
+.contains{
+    width: 800px;
+    height: 150px;
+    border: 1px solid black;
+    padding: 20px;
+    box-sizing: border-box;
+    display: none;
+    background: rgb(224, 236, 206)
+    
+}
+
+.active_contain{
+    display: block !important;
+    
+}
+.active_contain:hover{
+    background: black;
+    color: white;
+    transition: all 1s;
+}
+
+.active_menu{
+    background-color: greenyellow !important;
+    transition: all 1s;
+}
+

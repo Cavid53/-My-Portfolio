@@ -1,0 +1,44 @@
+.main{
+position: relative;
+}
+
+.main #ul{
+    display: flex;
+    justify-content: space-evenly;
+    background: darkgray;
+    height: 80px;
+    border: 1px solid black;
+ 
+}
+
+.main #ul li{
+    display: inline;
+    margin-top: 20px;
+    font-size: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    color: white;
+    transition: all 1s;
+    
+}
+.main .content{
+    display: none;
+    border: 1px solid black;
+    background-color: cadetblue;
+    color: white;
+    text-align: left;
+    padding: 25px;
+    position: absolute;
+    top: 80px;
+    
+}
+
+.active_content{
+    display: block !important;
+}
+
+.main #ul li:hover{
+    color: black;
+}
+
+
