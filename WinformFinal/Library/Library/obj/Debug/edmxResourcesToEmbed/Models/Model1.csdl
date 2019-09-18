@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="LibraryModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Book">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Price" Type="Decimal" Precision="5" Scale="2" />
+    <Property Name="Count" Type="Int32" />
+    <Property Name="GenresID" Type="Int32" />
+    <NavigationProperty Name="Genre" Relationship="Self.FK__Books__GenresID__3B75D760" FromRole="Books" ToRole="Genres" />
+    <NavigationProperty Name="OrderBooks" Relationship="Self.FK__OrderBook__Books__52593CB8" FromRole="Books" ToRole="OrderBook" />
+    <Property Name="Deleted" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Surname" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Age" Type="Int32" />
+    <Property Name="Email" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Deleted" Type="Boolean" Nullable="false" />
+    <Property Name="Status" Type="Boolean" Nullable="false" />
+    <Property Name="Level" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Orders" Relationship="Self.FK__Orders__Employee__4E88ABD4" FromRole="Employees" ToRole="Orders" />
+  </EntityType>
+  <EntityType Name="Genre">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Books" Relationship="Self.FK__Books__GenresID__3B75D760" FromRole="Genres" ToRole="Books" />
+    <Property Name="Deleted" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="OrderBook">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BooksID" Type="Int32" />
+    <Property Name="OrdersID" Type="Int32" />
+    <NavigationProperty Name="Book" Relationship="Self.FK__OrderBook__Books__52593CB8" FromRole="OrderBook" ToRole="Books" />
+    <NavigationProperty Name="Order" Relationship="Self.FK__OrderBook__Order__534D60F1" FromRole="OrderBook" ToRole="Orders" />
+  </EntityType>
+  <EntityType Name="Order">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="GiveTime" Type="DateTime" Precision="0" />
+    <Property Name="ReturnTime" Type="DateTime" Precision="0" />
+    <Property Name="RealTime" Type="DateTime" Precision="0" />
+    <Property Name="BookCount" Type="Int32" />
+    <Property Name="LateMoney" Type="Decimal" Precision="5" Scale="2" />
+    <Property Name="EmployeesID" Type="Int32" />
+    <Property Name="ClientsID" Type="Int32" />
+    <NavigationProperty Name="Employee" Relationship="Self.FK__Orders__Employee__4E88ABD4" FromRole="Orders" ToRole="Employees" />
+    <NavigationProperty Name="OrderBooks" Relationship="Self.FK__OrderBook__Order__534D60F1" FromRole="Orders" ToRole="OrderBook" />
+    <NavigationProperty Name="Client" Relationship="LibraryModel.FK__Orders__ClientsI__4F7CD00D" FromRole="Order" ToRole="Client" />
+    <Property Name="DeleteOrder" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__Books__GenresID__3B75D760">
+    <End Role="Genres" Type="Self.Genre" Multiplicity="0..1" />
+    <End Role="Books" Type="Self.Book" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Genres">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Books">
+        <PropertyRef Name="GenresID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__OrderBook__Books__52593CB8">
+    <End Role="Books" Type="Self.Book" Multiplicity="0..1" />
+    <End Role="OrderBook" Type="Self.OrderBook" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Books">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="OrderBook">
+        <PropertyRef Name="BooksID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Orders__Employee__4E88ABD4">
+    <End Role="Employees" Type="Self.Employee" Multiplicity="0..1" />
+    <End Role="Orders" Type="Self.Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employees">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="EmployeesID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__OrderBook__Order__534D60F1">
+    <End Role="Orders" Type="Self.Order" Multiplicity="0..1" />
+    <End Role="OrderBook" Type="Self.OrderBook" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Orders">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="OrderBook">
+        <PropertyRef Name="OrdersID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="LibraryEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Books" EntityType="Self.Book" />
+    <EntitySet Name="Employees" EntityType="Self.Employee" />
+    <EntitySet Name="Genres" EntityType="Self.Genre" />
+    <EntitySet Name="OrderBooks" EntityType="Self.OrderBook" />
+    <EntitySet Name="Orders" EntityType="Self.Order" />
+    <AssociationSet Name="FK__Books__GenresID__3B75D760" Association="Self.FK__Books__GenresID__3B75D760">
+      <End Role="Genres" EntitySet="Genres" />
+      <End Role="Books" EntitySet="Books" />
+    </AssociationSet>
+    <AssociationSet Name="FK__OrderBook__Books__52593CB8" Association="Self.FK__OrderBook__Books__52593CB8">
+      <End Role="Books" EntitySet="Books" />
+      <End Role="OrderBook" EntitySet="OrderBooks" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Orders__Employee__4E88ABD4" Association="Self.FK__Orders__Employee__4E88ABD4">
+      <End Role="Employees" EntitySet="Employees" />
+      <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK__OrderBook__Order__534D60F1" Association="Self.FK__OrderBook__Order__534D60F1">
+      <End Role="Orders" EntitySet="Orders" />
+      <End Role="OrderBook" EntitySet="OrderBooks" />
+    </AssociationSet>
+    <EntitySet Name="Clients" EntityType="LibraryModel.Client" />
+    <AssociationSet Name="FK__Orders__ClientsI__4F7CD00D" Association="LibraryModel.FK__Orders__ClientsI__4F7CD00D">
+      <End Role="Client" EntitySet="Clients" />
+      <End Role="Order" EntitySet="Orders" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Client">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Surname" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="PassportSeriaNumber" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Deleted" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Orders" Relationship="LibraryModel.FK__Orders__ClientsI__4F7CD00D" FromRole="Client" ToRole="Order" />
+  </EntityType>
+  <Association Name="FK__Orders__ClientsI__4F7CD00D">
+    <End Type="LibraryModel.Client" Role="Client" Multiplicity="0..1" />
+    <End Type="LibraryModel.Order" Role="Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Client">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="ClientsID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
